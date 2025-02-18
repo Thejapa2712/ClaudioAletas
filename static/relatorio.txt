@@ -1,0 +1,11 @@
+Dados da Aleta:
+Tipo de Aleta: 1)aletas retangulares retas
+Material: Alumínio
+Coeficiente de transferência de calor (h): 50.00 W/m²K
+Condutividade térmica (k): 205.00 W/mK
+Dimensões: (0.05, None, None)
+Temperatura do meio (T∞): 30.0 °C
+Temperatura da base da aleta (Tb): 100.0 °C
+Eficiência: 0.919061
+Área da Aleta: 0.002100 m²
+Taxa de Transferência de Calor (Q_aleta): 6.755096 W

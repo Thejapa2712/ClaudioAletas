@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center">Resultado</h1>
+            <p><strong>Tipo de Aleta:</strong> {{ tipo_aleta }}</p>
+            <p><strong>Material:</strong> {{ material }}</p>
+            <p><strong>Eficiência da Aleta:</strong> {{ eta_aleta }}</p>
+            <p><strong>Taxa de Transferência de Calor (Q_aleta):</strong> {{ Q_aleta }}</p>
+            <img src="{{ url_for('static', filename=grafico_path.split('static/')[1]) }}" alt="Gráfico da Distribuição de Temperatura" class="img-fluid">
+            <div class="text-center">
+                <a href="{{ url_for('static', filename=relatorio_path.split('static/')[1]) }}" class="btn btn-primary btn-custom" download>Baixar Relatório</a>
+                <a href="{{ url_for('static', filename=grafico_path.split('static/')[1]) }}" class="btn btn-secondary btn-custom" download>Baixar Gráfico</a>
+                <a href="/" class="btn btn-link btn-custom">Voltar</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

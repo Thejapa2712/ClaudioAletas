@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Dados</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .btn-custom {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 class="text-center">Inserir Dados para {{ tipo_aleta }}</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="h">Coeficiente de transferência de calor (h):</label>
+                <input type="text" class="form-control" id="h" name="h">
+            </div>
+            <div class="form-group">
+                <label for="T_b">Temperatura da base da aleta (T_b):</label>
+                <input type="text" class="form-control" id="T_b" name="T_b">
+            </div>
+            <div class="form-group">
+                <label for="T_inf">Temperatura do meio (T_inf):</label>
+                <input type="text" class="form-control" id="T_inf" name="T_inf">
+            </div>
+
+            {% if tipo_aleta in ["1)aletas retangulares retas", "2)aletas triangulares retas", "3)aletas parabolicas retas"] %}
+                <div class="form-group">
+                    <label for="l">Comprimento (l):</label>
+                    <input type="text" class="form-control" id="l" name="l">
+                </div>
+                <div class="form-group">
+                    <label for="t">Espessura (t):</label>
+                    <input type="text" class="form-control" id="t" name="t">
+                </div>
+                <div class="form-group">
+                    <label for="w">Largura (w):</label>
+                    <input type="text" class="form-control" id="w" name="w">
+                </div>
+            {% elif tipo_aleta == "4)aletas circulares de perfil retangular" %}
+                <div class="form-group">
+                    <label for="l">Comprimento (l):</label>
+                    <input type="text" class="form-control" id="l" name="l">
+                </div>
+                <div class="form-group">
+                    <label for="r1">Raio Interno (r1):</label>
+                    <input type="text" class="form-control" id="r1" name="r1">
+                </div>
+                <div class="form-group">
+                    <label for="r2">Raio Externo (r2):</label>
+                    <input type="text" class="form-control" id="r2" name="r2">
+                </div>
+                <div class="form-group">
+                    <label for="w">Largura (w):</label>
+                    <input type="text" class="form-control" id="w" name="w">
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <label for="l">Comprimento (l):</label>
+                    <input type="text" class="form-control" id="l" name="l">
+                </div>
+                <div class="form-group">
+                    <label for="D">Diâmetro (D):</label>
+                    <input type="text" class="form-control" id="D" name="D">
+                </div>
+            {% endif %}
+            
+            <button type="submit" class="btn btn-primary btn-custom">Gerar Gráfico</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

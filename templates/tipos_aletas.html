@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Aletas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .btn-custom {
+            margin-top: 20px;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateImages() {
+            const tipoAleta = document.getElementById('tipo_aleta').value;
+            const aletaImage = document.getElementById('aleta_image');
+            const formulaImage = document.getElementById('formula_image');
+
+            const aletaImages = {
+                "1)aletas retangulares retas": "static/aletas/1.png",
+                "2)aletas triangulares retas": "static/aletas/2.png",
+                "3)aletas parabolicas retas": "static/aletas/3.png",
+                "4)aletas circulares de perfil retangular": "static/aletas/4.png",
+                "5)aletas de perfil retangular": "static/aletas/5.png",
+                "6)aletas de perfil triangular": "static/aletas/6.png",
+                "7)aletas de perfil parabolico": "static/aletas/7.png",
+                "8)aletas de pino de perfilparabolico (ponta arredondada)": "static/aletas/8.png"
+            };
+
+            const formulaImages = {
+                "1)aletas retangulares retas": "static/formulas/1.png",
+                "2)aletas triangulares retas": "static/formulas/2.png",
+                "3)aletas parabolicas retas": "static/formulas/3.png",
+                "4)aletas circulares de perfil retangular": "static/formulas/4.png",
+                "5)aletas de perfil retangular": "static/formulas/5.png",
+                "6)aletas de perfil triangular": "static/formulas/6.png",
+                "7)aletas de perfil parabolico": "static/formulas/7.png",
+                "8)aletas de pino de perfilparabolico (ponta arredondada)": "static/formulas/8.png"
+            };
+
+            aletaImage.src = aletaImages[tipoAleta];
+            formulaImage.src = formulaImages[tipoAleta];
+        }
+    </script>
+</head>
+<body>
+    <div class="card">
+        <h1>Escolha o Tipo de Aleta</h1>
+        <form method="post">
+            <div class="form-group">
+                <select id="tipo_aleta" name="tipo_aleta" class="form-control" onchange="updateImages()">
+                    <option value="1)aletas retangulares retas">Aletas Retangulares Retas</option>
+                    <option value="2)aletas triangulares retas">Aletas Triangulares Retas</option>
+                    <option value="3)aletas parabolicas retas">Aletas Parabólicas Retas</option>
+                    <option value="4)aletas circulares de perfil retangular">Aletas Circulares de Perfil Retangular</option>
+                    <option value="5)aletas de perfil retangular">Aletas de Perfil Retangular</option>
+                    <option value="6)aletas de perfil triangular">Aletas de Perfil Triangular</option>
+                    <option value="7)aletas de perfil parabolico">Aletas de Perfil Parabólico</option>
+                    <option value="8)aletas de pino de perfilparabolico (ponta arredondada)">Aletas de Pino de Perfil Parabólico (Ponta Arredondada)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-custom">Próximo</button>
+        </form>
+        <h2>Imagem da Aleta</h2>
+        <img id="aleta_image" src="static/aletas/1.png" alt="Imagem da Aleta" class="img-fluid">
+        <h2>Fórmula da Aleta</h2>
+        <img id="formula_image" src="static/formulas/1.png" alt="Fórmula da Aleta" class="img-fluid">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
